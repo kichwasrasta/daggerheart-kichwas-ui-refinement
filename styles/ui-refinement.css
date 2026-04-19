@@ -1,0 +1,49 @@
+/* 
+ * Hide the spellcast trait icon that otherwise covers character art.
+ * What kind of savages would ever cover art with icons...
+ * I put pictures of character sheets because I want to look at them.
+ * The hard part was figuring out where to put this information on the character sheet after hiding it here.
+ */
+.portrait .icons-list {
+  display: none;
+}
+.application.sheet.daggerheart.actor.dh-style.character .character-header-sheet .character-details span.spellcasting-trait {
+  background: none;
+  color: inherit;
+  cursor: default;
+}
+
+/* 
+ * Fear Tracker Adjustments
+ * Goal: Make it a fixed UI element at center top of the screen, and remove the window styling.
+ * I find it very dangerous that the fear tracker has such a generic name,
+ * so I've tried to be extra careful in examing for a fear related child node.
+ * As far as I could tell nothing else in the system uses the id 'resources',
+ * but it does get used as a class name on the party sheet.
+ */
+#resources:has(#resource-fear) {
+    min-height: unset !important;
+    height: unset !important;
+    width: unset !important;
+    background: unset;
+    top:10px !important;
+    left:50% !important;
+    transform: translateX(-50%) !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: unset;
+}
+
+#resources:has(#resource-fear) .window-header, #resources:has(#resource-fear) .window-resize-handle {
+    display: none !important;
+}
+
+#resources:has(#resource-fear) .window-content {
+    backdrop-filter: unset;
+}
+
+#resources:has(#resource-fear) .window-content #resource-fear i {
+    font-size: var(--font-size-10);
+    width: 1.4rem;
+    line-height: unset;
+}

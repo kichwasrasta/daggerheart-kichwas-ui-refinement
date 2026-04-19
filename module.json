@@ -1,0 +1,20 @@
+{
+  "id": "daggerheart-kichwas-ui-refinement",
+  "title": "Daggerheart: Kichwas' UI Refinement",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "description": "<p>My refinements to the Daggerheart UI.<br>Changing a few things to my preferences.</p>",
+  "flags": {
+    "canUpload": true
+  },
+    "styles": [
+    "styles/ui-refinement.css"
+  ],
+  "scripts": [
+    "scripts/inject-spellcasting.js"
+  ],
+  "action": "manageModule"
+}
