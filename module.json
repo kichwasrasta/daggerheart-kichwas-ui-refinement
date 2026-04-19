@@ -2,7 +2,7 @@
   "id": "daggerheart-kichwas-ui-refinement",
   "title": "Daggerheart: Kichwas' UI Refinement",
   "url":"https://github.com/kichwasrasta/daggerheart-kichwas-ui-refinement",
-  "manifest": "https://github.com/kichwasrasta/daggerheart-kichwas-ui-refinement/blob/main/module.json",
+  "manifest": "https://raw.githubusercontent.com/kichwasrasta/daggerheart-kichwas-ui-refinement/refs/heads/main/module.json",
   "version": "1.0.0",
   "compatibility": {
     "minimum": "14",
