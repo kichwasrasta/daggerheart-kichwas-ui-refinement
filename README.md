@@ -11,6 +11,6 @@ TODO:
 - Wrap my edits in a unique tag so they can be found for bug / conflicts tracing.
 - Stuff - if I find more things I want to tweak. But only after I make it so people can pick what they want.
 - Ensure it doesn't conflict with other popular UI mods.
-- Change the mouseover tooltip to say which trait - how did I not think of that originally... :slight_smile:
+- Change the mouseover tooltip to say which trait - how did I not think of that originally.
 
 Note: Hand coded, with comments in the code for what and why in case folks find bugs.
