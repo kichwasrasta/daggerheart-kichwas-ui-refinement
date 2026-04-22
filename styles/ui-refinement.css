@@ -8,12 +8,6 @@
   display: none;
 }
 
-.application.sheet.daggerheart.actor.dh-style.character .character-header-sheet .character-details span.spellcasting-trait {
-  background: none;
-  color: inherit;
-  cursor: default;
-}
-
 /*
  * Undo my spellcasting trait change if using Sleek UI.
  */
