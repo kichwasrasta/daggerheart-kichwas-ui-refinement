@@ -101,7 +101,11 @@
 }
 
 .dh-feartrackerplus-window .tracker-header,
-.dh-feartrackerplus-window .fear-tracker-window:hover .resize-handle,
-.dh-feartrackerplus-window .context-menu {
+.dh-feartrackerplus-window .fear-tracker-window:hover .resize-handle {
     display: none !important;
+}
+
+#dh-feartrackerplus-app nav#context-menu {
+    display: none !important;
+    pointer-events: none;
 }
