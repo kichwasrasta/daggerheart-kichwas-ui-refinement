@@ -7,6 +7,7 @@
 .portrait .icons-list {
   display: none;
 }
+
 .application.sheet.daggerheart.actor.dh-style.character .character-header-sheet .character-details span.spellcasting-trait {
   background: none;
   color: inherit;
@@ -84,17 +85,23 @@
     padding: 0rem;
     z-index: 1;
 }
+
 .dh-feartrackerplus-window .fear-tracker-window:hover {
     background: unset;
     border: none;
     
 }
-.dh-feartrackerplus-window .fear-tracker-window .tokens-container .fear-token {
+
+.dh-feartrackerplus-window .fear-tracker-window .tokens-container .fear-token,
+.dh-feartrackerplus-window .fear-tracker-window .fear-visuals .fear-bar-container,
+.dh-feartrackerplus-window .fear-tracker-window .fear-visuals .value-control
+{
     z-index: 2;
     pointer-events: auto;
 }
 
-.dh-feartrackerplus-window .tracker-header, 
+.dh-feartrackerplus-window .tracker-header,
+.dh-feartrackerplus-window .fear-tracker-window:hover .resize-handle,
 .dh-feartrackerplus-window .context-menu {
     display: none !important;
 }
