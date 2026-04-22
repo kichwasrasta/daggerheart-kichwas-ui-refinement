@@ -13,6 +13,14 @@
   cursor: default;
 }
 
+/*
+ * Undo my spellcasting trait change if using Sleek UI.
+ */
+#sleek-ui-sheet .character-information .character-details span.spellcasting-trait,
+#sleek-ui-sheet .character-information .character-details span.dot  {
+    display:none;
+}
+
 /* 
  * Fear Tracker Adjustments
  * Goal: Make it a fixed UI element at center top of the screen, and remove the window styling.
@@ -34,7 +42,8 @@
     box-shadow: unset;
 }
 
-#resources:has(#resource-fear) .window-header, #resources:has(#resource-fear) .window-resize-handle {
+#resources:has(#resource-fear) .window-header, 
+#resources:has(#resource-fear) .window-resize-handle {
     display: none !important;
 }
 
@@ -46,4 +55,46 @@
     font-size: var(--font-size-10);
     width: 1.4rem;
     line-height: unset;
+}
+
+/* 
+ * Disable fear-tracker-plus's UI controls, padding, and mobility.
+ * Users can still right click icons and get the unlock button
+ * - that takes a javascript injection to disable.
+ */
+.dh-feartrackerplus-window {
+    min-height: unset !important;
+    height: unset !important;
+    width: unset !important;
+    background: unset;
+    top:10px !important;
+    left:50% !important;
+    transform: translateX(-50%) !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: unset;
+}
+
+.dh-feartrackerplus-window .fear-tracker-window {
+    pointer-events: none;
+    background: unset;
+    border: none;
+    box-shadow: unset;
+    backdrop-filter: unset;
+    padding: 0rem;
+    z-index: 1;
+}
+.dh-feartrackerplus-window .fear-tracker-window:hover {
+    background: unset;
+    border: none;
+    
+}
+.dh-feartrackerplus-window .fear-tracker-window .tokens-container .fear-token {
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.dh-feartrackerplus-window .tracker-header, 
+.dh-feartrackerplus-window .context-menu {
+    display: none !important;
 }
