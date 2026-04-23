@@ -8,11 +8,16 @@
   display: none;
 }
 
+.application.sheet.daggerheart.actor.dh-style.character .character-header-sheet .character-details span.kichwas-ui-refinement {
+  background: none;
+  color: inherit;
+  cursor: default;
+}
+
 /*
  * Undo my spellcasting trait change if using Sleek UI.
  */
-#sleek-ui-sheet .character-information .character-details span.spellcasting-trait,
-#sleek-ui-sheet .character-information .character-details span.dot  {
+#sleek-ui-sheet .character-information .character-details span.kichwas-ui-refinement {
     display:none;
 }
 
