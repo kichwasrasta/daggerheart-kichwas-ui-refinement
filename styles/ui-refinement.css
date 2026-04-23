@@ -4,7 +4,7 @@
  * I put pictures of character sheets because I want to look at them.
  * The hard part was figuring out where to put this information on the character sheet after hiding it here.
  */
-.portrait .icons-list {
+.portrait .kichwas-ui-refinement-hide-icon {
   display: none;
 }
 
@@ -16,6 +16,8 @@
 
 /*
  * Undo my spellcasting trait change if using Sleek UI.
+ * Sleek UI doesn't block the art with stuff, so no need to mess with it.
+ * Sleek UI also has it's own way of showing the spellcasting trait, which this leaves alone.
  */
 #sleek-ui-sheet .character-information .character-details span.kichwas-ui-refinement {
     display:none;
@@ -29,7 +31,7 @@
  * As far as I could tell nothing else in the system uses the id 'resources',
  * but it does get used as a class name on the party sheet.
  */
-#resources:has(#resource-fear) {
+#resources.kichwas-ui-refinement-lock-tracker {
     min-height: unset !important;
     height: unset !important;
     width: unset !important;
@@ -42,16 +44,16 @@
     box-shadow: unset;
 }
 
-#resources:has(#resource-fear) .window-header, 
-#resources:has(#resource-fear) .window-resize-handle {
+#resources.kichwas-ui-refinement-lock-tracker .window-header, 
+#resources.kichwas-ui-refinement-lock-tracker .window-resize-handle {
     display: none !important;
 }
 
-#resources:has(#resource-fear) .window-content {
+#resources.kichwas-ui-refinement-lock-tracker .window-content {
     backdrop-filter: unset;
 }
 
-#resources:has(#resource-fear) .window-content #resource-fear i {
+#resources.kichwas-ui-refinement-lock-tracker .window-content #resource-fear i {
     font-size: var(--font-size-10);
     width: 1.4rem;
     line-height: unset;
@@ -59,10 +61,8 @@
 
 /* 
  * Disable fear-tracker-plus's UI controls, padding, and mobility.
- * Users can still right click icons and get the unlock button
- * - that takes a javascript injection to disable.
  */
-.dh-feartrackerplus-window {
+.kichwas-ui-refinement-lock-ftp-tracker {
     min-height: unset !important;
     height: unset !important;
     width: unset !important;
@@ -75,7 +75,7 @@
     box-shadow: unset;
 }
 
-.dh-feartrackerplus-window .fear-tracker-window {
+.kichwas-ui-refinement-lock-ftp-tracker .fear-tracker-window {
     pointer-events: none;
     background: unset;
     border: none;
@@ -85,26 +85,26 @@
     z-index: 1;
 }
 
-.dh-feartrackerplus-window .fear-tracker-window:hover {
+.kichwas-ui-refinement-lock-ftp-tracker .fear-tracker-window:hover {
     background: unset;
     border: none;
     
 }
 
-.dh-feartrackerplus-window .fear-tracker-window .tokens-container .fear-token,
-.dh-feartrackerplus-window .fear-tracker-window .fear-visuals .fear-bar-container,
-.dh-feartrackerplus-window .fear-tracker-window .fear-visuals .value-control
+.kichwas-ui-refinement-lock-ftp-tracker .fear-tracker-window .tokens-container .fear-token,
+.kichwas-ui-refinement-lock-ftp-tracker .fear-tracker-window .fear-visuals .fear-bar-container,
+.kichwas-ui-refinement-lock-ftp-tracker .fear-tracker-window .fear-visuals .value-control
 {
     z-index: 2;
     pointer-events: auto;
 }
 
-.dh-feartrackerplus-window .tracker-header,
-.dh-feartrackerplus-window .fear-tracker-window:hover .resize-handle {
+.kichwas-ui-refinement-lock-ftp-tracker .tracker-header,
+.kichwas-ui-refinement-lock-ftp-tracker .fear-tracker-window:hover .resize-handle {
     display: none !important;
 }
 
-#dh-feartrackerplus-app nav#context-menu {
+#dh-feartrackerplus-app.kichwas-ui-refinement-lock-ftp-tracker nav#context-menu {
     display: none !important;
     pointer-events: none;
 }
