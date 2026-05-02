@@ -13,7 +13,8 @@
     "verified": "14"
   },
   "url": "https://github.com/kichwasrasta/daggerheart-kichwas-ui-refinement",
-  "manifest": "https://raw.githubusercontent.com/kichwasrasta/daggerheart-kichwas-ui-refinement/refs/heads/main/module.json",
+  "manifest": "https://raw.githubusercontent.com/kichwasrasta/daggerheart-kichwas-ui-refinement/main/module.json",
+  "download": "https://github.com/kichwasrasta/daggerheart-kichwas-ui-refinement/archive/refs/heads/main.zip",
   "styles": [
     "styles/ui-refinement.css"
   ],
