@@ -51,12 +51,19 @@
 
 #resources.kichwas-ui-refinement-lock-tracker .window-content {
     backdrop-filter: unset;
+    padding: var(--spacer-16);
 }
 
 #resources.kichwas-ui-refinement-lock-tracker .window-content #resource-fear i {
     font-size: var(--font-size-10);
-    width: 1.4rem;
+    width: 1.4rem !important;
     line-height: unset;
+    border-radius: revert-layer !important;
+}
+#resources.kichwas-ui-refinement-lock-tracker .window-content #resource-fear .resource-bar {
+    font-size: var(--font-size-12);
+    min-width: unset !important;
+    padding: 0.4rem;
 }
 
 /* 
@@ -88,7 +95,7 @@
 .kichwas-ui-refinement-lock-ftp-tracker .fear-tracker-window:hover {
     background: unset;
     border: none;
-    
+    box-shadow: unset;
 }
 
 .kichwas-ui-refinement-lock-ftp-tracker .fear-tracker-window .tokens-container .fear-token,
