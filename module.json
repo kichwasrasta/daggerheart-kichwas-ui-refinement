@@ -1,22 +1,26 @@
 {
   "id": "daggerheart-kichwas-ui-refinement",
   "title": "Daggerheart: Kichwas' UI Refinement",
-  "url":"https://github.com/kichwasrasta/daggerheart-kichwas-ui-refinement",
-  "manifest": "https://raw.githubusercontent.com/kichwasrasta/daggerheart-kichwas-ui-refinement/refs/heads/main/module.json",
+  "description": "My refinements to the Daggerheart UI. Changing a few things to my preferences.",
   "version": "1.1.1",
+  "authors": [
+    {
+      "name": "Kichwas"
+    }
+  ],
   "compatibility": {
     "minimum": "14",
     "verified": "14"
   },
-  "description": "<p>My refinements to the Daggerheart UI.<br>Changing a few things to my preferences.</p>",
-  "flags": {
-    "canUpload": true
-  },
-    "styles": [
+  "url": "https://github.com/kichwasrasta/daggerheart-kichwas-ui-refinement",
+  "manifest": "https://raw.githubusercontent.com/kichwasrasta/daggerheart-kichwas-ui-refinement/refs/heads/main/module.json",
+  "styles": [
     "styles/ui-refinement.css"
   ],
   "scripts": [
     "scripts/inject-spellcasting.js"
   ],
-  "action": "manageModule"
+  "flags": {
+    "canUpload": true
+  }
 }
