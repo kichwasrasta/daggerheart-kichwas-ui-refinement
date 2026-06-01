@@ -19,7 +19,8 @@
     "styles/ui-refinement.css"
   ],
   "scripts": [
-    "scripts/inject-spellcasting.js"
+    "scripts/inject-spellcasting.js",
+    "scripts/reroll-enhancements.js"
   ],
   "flags": {
     "canUpload": true
