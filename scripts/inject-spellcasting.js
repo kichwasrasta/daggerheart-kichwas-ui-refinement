@@ -31,11 +31,6 @@ Hooks.on("renderCharacterSheet", (app, html, data) => {
         lastSpan.insertAdjacentHTML("afterend", spellcastHtml);
       }
     }
-
-    const iconsList = html.querySelector(".icons-list");
-    if (iconsList && !iconsList.classList.contains("kichwas-ui-refinement-hide-icon")) {
-      iconsList.classList.add("kichwas-ui-refinement-hide-icon");
-    }
   }
 });
 
@@ -47,16 +42,46 @@ Hooks.on("renderCharacterSheet", (app, html, data) => {
 const applyFearTrackerPatch = () => {
   const baseFear = document.querySelector("#resource-fear");
   const baseResources = baseFear?.closest("#resources");
+  const positionX =
+    game.settings.get(
+      "daggerheart-kichwas-ui-refinement",
+      "PositionHorizontalFearTacker"
+    );
+  const positionY =
+    game.settings.get(
+      "daggerheart-kichwas-ui-refinement",
+      "PositionVerticalFearTacker"
+    );
+  const fontSize = game.settings.get(
+    "daggerheart-kichwas-ui-refinement",
+    "FearTackerFontSize"
+    );
+
 
   if (baseResources) {
     baseResources.classList.add("kichwas-ui-refinement-lock-tracker");
+    baseResources.style.left = `${positionX}%`;
+    baseResources.style.top = `${positionY}%`;
+    baseResources.style.transform =
+      `translateX(-${100 - positionX}%)`;
   }
 
   const fearTrackerPlus = document.querySelector("#dh-feartrackerplus-app");
 
   if (fearTrackerPlus) {
     fearTrackerPlus.classList.add("kichwas-ui-refinement-lock-ftp-tracker");
+    fearTrackerPlus.style.left = `${positionX}%`;
+    fearTrackerPlus.style.top = `${positionY}%`;
+    fearTrackerPlus.style.transform =
+      `translateX(-${100 - positionX}%)`;
   }
+
+baseResources.style.setProperty(
+  "--kichwas-fear-font-size",
+  `${fontSize}px`
+);
+
+
 };
 
 /**
@@ -87,12 +112,12 @@ Hooks.once("ready", () => {
  */
 Hooks.once('init', () => {
   game.settings.register('daggerheart-kichwas-ui-refinement', 'moveSpellcastingTrait', {
-    name: 'Move Spellcasting Trait',
-    hint: 'Show Spellcasting Trait on sheet instead of covering artwork.',
+    name: 'Optional Spellcasting Trait Display',
+    hint: 'Show Spellcasting Trait on character sheet details.',
     scope: 'client',
     config: true,
     type: Boolean,
-    default: true,
+    default: false,
     onChange: (value) => {
       refreshActorSheets();
     }
@@ -101,7 +126,8 @@ Hooks.once('init', () => {
   game.settings.register('daggerheart-kichwas-ui-refinement', 'lockFearTacker', {
     name: 'Lock Fear Tracker',
     hint: 'Lock Fear Tracker in place.',
-    scope: 'client',
+    restricted: true,
+    scope: "world",
     config: true,
     type: Boolean,
     default: true,
@@ -109,7 +135,52 @@ Hooks.once('init', () => {
       Hooks.callAll("kichwas:settingsChanged")
     }
   });
+
+  game.settings.register('daggerheart-kichwas-ui-refinement', 'PositionHorizontalFearTacker', {
+    name: "Horizontal position of Fear Tracker",
+    hint: 'Percent of screen from the left edge at which to center the fear tracker', // Setting description
+    scope: 'client',
+    config: true,
+    range: {
+      min: 5,
+      max: 100,
+      step: 5,
+    },
+    default: 50, // Default Value
+    type: Number, // Value type
+  });
+
+  game.settings.register('daggerheart-kichwas-ui-refinement', 'PositionVerticalFearTacker', {
+    name: "Vertical position of Fear Tracker",
+    hint: 'Percent of screen from the top edge at which to center the fear tracker', // Setting description
+    scope: 'client',
+    config: true,
+    range: {
+      min: 0,
+      max: 100,
+      step: 1,
+    },
+    default: 1, // Default Value
+    type: Number, // Value type
+  });
+
+  game.settings.register('daggerheart-kichwas-ui-refinement', 'FearTackerFontSize', {
+    name: "Font Size of Fear Tracker",
+    hint: 'Size of the font used in the fear tracker', // Setting description
+    scope: 'client',
+    config: true,
+    range: {
+      min: 5,
+      max: 30,
+      step: 1,
+    },
+    default: 10, // Default Value
+    type: Number, // Value type
+  });
+
 });
+
+
 
 /*
  * Handles changes to module settings by reloading the page.

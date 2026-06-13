@@ -1,12 +1,6 @@
 /* 
- * Hide the spellcast trait icon that otherwise covers character art.
- * What kind of savages would ever cover art with icons...
- * I put pictures of character sheets because I want to look at them.
- * The hard part was figuring out where to put this information on the character sheet after hiding it here.
+ * Display spellcasting trait in the character sheet's character details section.
  */
-.portrait .kichwas-ui-refinement-hide-icon {
-  display: none;
-}
 
 .application.sheet.daggerheart.actor.dh-style.character .character-header-sheet .character-details span.kichwas-ui-refinement {
   background: none;
@@ -36,9 +30,6 @@
     height: unset !important;
     width: unset !important;
     background: unset;
-    top:10px !important;
-    left:50% !important;
-    transform: translateX(-50%) !important;
     background: none !important;
     border: none !important;
     box-shadow: unset;
@@ -55,13 +46,25 @@
 }
 
 #resources.kichwas-ui-refinement-lock-tracker .window-content #resource-fear i {
-    font-size: var(--font-size-10);
-    width: 1.4rem !important;
+    font-size:
+        var(
+            --kichwas-fear-font-size,
+            var(--font-size-10)
+        ) !important;
+    width:
+        calc(
+            var(--kichwas-fear-font-size, var(--font-size-10))
+            * 2
+        ) !important;
     line-height: unset;
     border-radius: revert-layer !important;
 }
 #resources.kichwas-ui-refinement-lock-tracker .window-content #resource-fear .resource-bar {
-    font-size: var(--font-size-12);
+    font-size:
+        var(
+            --kichwas-fear-font-size,
+            var(--font-size-10)
+        ) !important;
     min-width: unset !important;
     padding: 0.4rem;
 }
@@ -74,9 +77,6 @@
     height: unset !important;
     width: unset !important;
     background: unset;
-    top:10px !important;
-    left:50% !important;
-    transform: translateX(-50%) !important;
     background: none !important;
     border: none !important;
     box-shadow: unset;

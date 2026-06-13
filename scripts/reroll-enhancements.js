@@ -553,7 +553,8 @@ Hooks.once('init', () => {
   game.settings.register('daggerheart-kichwas-ui-refinement', 'cheatDieRolls', {
     name: 'Cheat Die Rolls',
     hint: 'Allow players to override die roll values.',
-    scope: 'client',
+    restricted: true,
+    scope: "world",
     config: true,
     type: Boolean,
     default: true,
